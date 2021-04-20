@@ -6,6 +6,8 @@
 #include <scheduler.h>
 #include <os_start.h>
 
+extern int bsp_main(void);
+
 /****************************************************************************
  * Pre-processor Definitions
  ****************************************************************************/
@@ -31,6 +33,7 @@ void board_init(void)
   //printf("\r\nTemplate initializing\r\n.");
 
   //uart_init(&num_uarts);
+  bsp_main();
 }
 
 /*
@@ -82,27 +85,6 @@ int cpu_getirqnum(void)
   /* TODO  */
   return 0;
 }
-
-void __assert_func(bool assert_cond)
-{
-}
-
-unsigned int __aeabi_uidiv(unsigned int num, unsigned int den)
-{
-  return 0;
-}
-
-typedef struct { unsigned quot; unsigned rem;} uidiv_mod_t;
-uidiv_mod_t __aeabi_uidivmod(unsigned numerator, unsigned denominator) {
-  uidiv_mod_t a;
-  return a;
-}
-
-uidiv_mod_t __aeabi_idivmod(int numerator, int denominator) {
-  uidiv_mod_t a;
-  return a;
-}
-
 
 int cpu_savecontext(void *mcu_context)
 {

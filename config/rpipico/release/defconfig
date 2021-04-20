@@ -9,8 +9,8 @@
 CONFIG_MACHINE_TYPE="rpipico"
 CONFIG_PREFIX_TOOLCHAIN="arm-none-eabi-"
 CONFIG_COMMAND_LOAD="./flash_all.sh"
-CONFIG_CFLAGS=" -mcpu=cortex-m0plus -mthumb -g -Wall -nostdlib -nostartfiles -ffreestanding "
-CONFIG_LDFLAGS=" ${CFLAGS} -Wl,-T${TOPDIR}/linker.ld "
+CONFIG_CFLAGS=" -mcpu=cortex-m0plus -mthumb -g -Wall -nostartfiles -nostdlib -ffreestanding "
+CONFIG_LDFLAGS=" ${CFLAGS} -Wl,-T${TOPDIR}/linker.ld -L. -lbsp -lgcc"
 # CONFIG_SPI_0 is not set
 # CONFIG_SPI_1 is not set
 CONFIG_SPI_BUFFER_LEN=32
