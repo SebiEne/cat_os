@@ -14,6 +14,7 @@ int puts(const char *s)
 
 int main(void)
 {
+  __start();
   return 0;
 }
 
